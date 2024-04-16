@@ -32,5 +32,6 @@ jobs:
       #     docker push r8.im/zeke/hello-world
 
       - name: List Docker images (again)
+        if: ${{ always() }}
         run: |
           docker images --all --digests
