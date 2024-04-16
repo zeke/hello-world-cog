@@ -18,6 +18,10 @@ jobs:
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
 
+      - name: List Docker images
+        run: |
+          docker images
+
       # - name: Build with Cog
       #   run: |
       #     cog build
@@ -25,3 +29,7 @@ jobs:
       - name: Push to Replicate
         run: |
           cog push r8.im/zeke/hello-world
+
+      - name: List Docker images (again)
+        run: |
+          docker images
