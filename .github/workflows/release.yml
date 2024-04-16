@@ -20,7 +20,7 @@ jobs:
 
       - name: List Docker images
         run: |
-          docker images
+          docker images --all --digests
 
       # - name: Build with Cog
       #   run: |
@@ -32,4 +32,4 @@ jobs:
 
       - name: List Docker images (again)
         run: |
-          docker images
+          docker images --all --digests
