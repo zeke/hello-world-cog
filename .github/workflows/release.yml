@@ -7,17 +7,21 @@ jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish & Deploy
     runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Setup Cog
+        uses: replicate/setup-cog@v1.0.4
+        with:
+          cog-version: "v0.9.5"
+          install-cuda: false
+          token: ${{ secrets.REPLICATE_API_TOKEN }}
 
-    - name: Setup Cog
-      uses: replicate/setup-cog@v1.0.4
-      with:
-        cog-version: "v0.9.5"
-        install-cuda: false
-        token: ${{ secrets.REPLICATE_API_TOKEN }}
+      - name: Build with Cog
+        run: |
+          cog build
 
-    - name: Push to Replicate
-      run: |
-        cog push r8.im/zeke/hello-world
+      - name: Push to Replicate
+        run: |
+          cog push r8.im/zeke/hello-world
