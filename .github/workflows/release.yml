@@ -12,9 +12,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Cog
-        uses: replicate/setup-cog@v1.0.4
+        uses: replicate/setup-cog@v1
         with:
-          cog-version: "v0.9.5"
+          # cog-version: "v0.9.5"
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
 
