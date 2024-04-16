@@ -18,9 +18,9 @@ jobs:
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
 
-      - name: Build with Cog
-        run: |
-          cog build
+      # - name: Build with Cog
+      #   run: |
+      #     cog build
 
       - name: Push to Replicate
         run: |
