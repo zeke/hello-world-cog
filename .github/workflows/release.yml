@@ -22,14 +22,14 @@ jobs:
         run: |
           docker images --all --digests
 
-      # - name: Build with Cog
-      #   run: |
-      #     cog build
-
-      - name: Push to Replicate (using Docker)
+      - name: Build with Cog
         run: |
-          # cog push r8.im/zeke/hello-world
-          docker push r8.im/zeke/hello-world
+          cog build
+
+      # - name: Push to Replicate (using Docker)
+      #   run: |
+      #     # cog push r8.im/zeke/hello-world
+      #     docker push r8.im/zeke/hello-world
 
       - name: List Docker images (again)
         run: |
