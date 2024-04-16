@@ -14,7 +14,7 @@ jobs:
       - name: Setup Cog
         uses: replicate/setup-cog@v1.0.3
         with:
-          cog-version: "v0.9.5"
+          # cog-version: "v0.9.5"
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
 
