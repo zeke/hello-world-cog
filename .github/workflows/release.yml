@@ -26,9 +26,10 @@ jobs:
       #   run: |
       #     cog build
 
-      - name: Push to Replicate
+      - name: Push to Replicate (using Docker)
         run: |
-          cog push r8.im/zeke/hello-world
+          # cog push r8.im/zeke/hello-world
+          docker push r8.im/zeke/hello-world
 
       - name: List Docker images (again)
         run: |
