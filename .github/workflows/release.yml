@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Cog
-        uses: replicate/setup-cog@de6bc5792f3c2e764992b53278b789979e4b4580
+        uses: replicate/setup-cog@b152ebfd62eecd5d256c3087a9e1a1aae9d4855c
         with:
           cog-commitish: "3cf1e44"
           install-cuda: false
