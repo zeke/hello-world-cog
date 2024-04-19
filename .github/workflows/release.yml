@@ -11,15 +11,15 @@ jobs:
     name: Setup, Build, Publish & Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: Setup Cog
         uses: replicate/setup-cog@de6bc5792f3c2e764992b53278b789979e4b4580
         with:
           cog-commitish: "3cf1e44"
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Build with Cog
         run: |
