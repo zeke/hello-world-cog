@@ -23,6 +23,8 @@ jobs:
 
       - name: Build with Cog
         run: |
+          pwd
+          ls -al
           cog build
 
       - name: Push to Replicate
