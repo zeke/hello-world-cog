@@ -12,26 +12,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Cog
-        uses: replicate/setup-cog@5c73d167281ed6630bf68055af1737b655cdadca
+        uses: replicate/setup-cog@c808297
         with:
-          cog-version: "v0.8.6"
+          cog-commitish: "3cf1e44"
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
-
-      - name: List Docker images
-        run: |
-          docker images --all --digests
 
       - name: Build with Cog
         run: |
           cog build
 
-      # - name: Push to Replicate (using Docker)
-      #   run: |
-      #     # cog push r8.im/zeke/hello-world
-      #     docker push r8.im/zeke/hello-world
-
-      - name: List Docker images (again)
-        if: ${{ always() }}
+      - name: Push to Replicate
         run: |
-          docker images --all --digests
+          cog push r8.im/zeke/hello-world
