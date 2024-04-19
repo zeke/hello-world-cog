@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Cog
-        uses: replicate/setup-cog@c808297a986174b439c36c06757ac40c5b1f05bb
+        uses: replicate/setup-cog@de6bc5792f3c2e764992b53278b789979e4b4580
         with:
           cog-commitish: "3cf1e44"
           install-cuda: false
