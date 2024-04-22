@@ -23,9 +23,15 @@ jobs:
       - name: Setup Cog
         uses: replicate/setup-cog@support-building-cog-from-source
         with:
-          cog-commitish: "3cf1e448ca54088d797bc774ccc4b7a9f075aae0"
+          cog-commitish: main
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
+
+      - name: Inpsect the Cog checkout's build.go file
+        run: |
+          set -x
+          cat cog-repo/pkg/docker/build.go
+          cat cog-repo/pkg/docker/build.go | grep load
 
       - name: Build with Cog
         run: |
