@@ -23,8 +23,10 @@ jobs:
 
       - name: Build with Cog
         run: |
+          set -x
           pwd
           ls -al
+          echo $PATH
           cog build
 
       - name: Push to Replicate
