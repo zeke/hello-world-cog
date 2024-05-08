@@ -23,7 +23,7 @@ jobs:
       - name: Setup Cog
         uses: replicate/setup-cog@support-building-cog-from-source
         with:
-          cog-commitish: main
+          cog-commitish: "495a90a3108318e403fe649dadcd4a781e907479"
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
 
