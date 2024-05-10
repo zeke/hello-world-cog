@@ -21,9 +21,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Cog
-        uses: replicate/setup-cog@support-building-cog-from-source
+        uses: replicate/setup-cog@v1
         with:
-          cog-commitish: "495a90a3108318e403fe649dadcd4a781e907479"
+          cog-version: "v0.9.8-alpha"
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
 
