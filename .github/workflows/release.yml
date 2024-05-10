@@ -27,14 +27,18 @@ jobs:
           install-cuda: false
           token: ${{ secrets.REPLICATE_API_TOKEN }}
 
-      - name: Build with Cog
+      # - name: Build with Cog
+      #   run: |
+      #     set -x
+      #     pwd
+      #     ls -al
+      #     echo $PATH
+      #     cog build
+
+      - name: Push to Replicate
         run: |
           set -x
           pwd
           ls -al
           echo $PATH
-          cog build
-
-      - name: Push to Replicate
-        run: |
           cog push r8.im/zeke/hello-world
