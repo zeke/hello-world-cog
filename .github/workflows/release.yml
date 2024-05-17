@@ -1,4 +1,4 @@
-name: Release
+name: Push to Replicate
 
 on:
   push:
