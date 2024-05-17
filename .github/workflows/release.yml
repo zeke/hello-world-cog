@@ -7,12 +7,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup-build-publish-deploy:
-    name: Setup, Build, Publish & Deploy
+  push_to_replicate:
+    name: Push to Replicate
+
+    # If your model is large, the default GitHub Actions runner may not 
+    # have enough disk space. If you need more space you can set up a 
+    # bigger runner. See https://replicate.fyi/large-github-runners
     runs-on: ubuntu-latest
     steps:
       - name: Free disk pace
-        uses: jlumbroso/free-disk-space@main
+        uses: jlumbroso/free-disk-space@v1.3.1
         with:
           tool-cache: false
           docker-images: false
